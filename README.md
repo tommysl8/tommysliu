@@ -4,14 +4,13 @@ Plain HTML / CSS / JS. No build step.
 
 ```
 index.html        single page: intro (with island/sailboat scene), education, projects & publications,
-                  experience, awards & honors, news, violin, blog, gallery, contact
-blog/             essay pages (olympiad-cheating.html, uc-meritocracy.html)
+                  experience, awards & honors, news, violin, gallery, contact
 styles.css        Wind Waker-inspired theme (sky, sea-chart grid, cream panels); colour tokens at the top
 main.js           sticky-nav state, mobile menu, section highlighting, "show older news"
 img/              photos (see to-do)
 og-image.png      social preview card
 404.html          not-found page (Vercel picks it up automatically)
-vercel.json       cleanUrls -> /blog/uc-meritocracy works without .html
+vercel.json       cleanUrls -> pages resolve without the .html extension
 ```
 
 ## Preview locally
