@@ -262,15 +262,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .award .note { margin-top: 9px; font-size: 14px; color: var(--muted); font-weight: 700; }
 
-/* ---------- news: deliberately minor ---------- */
-.news { font-size: 15px; }
-.news li { display: grid; grid-template-columns: 108px 1fr; gap: 16px; padding: 8px 0; border-top: var(--dash); }
-.news li:first-child { border-top: 0; }
-.news .when { font-weight: 800; font-size: 13px; color: var(--muted); }
-.news li.hidden, .hidden { display: none; }
-.more { margin-top: 14px; font-weight: 800; font-size: 14px; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(22, 50, 92, 0.35); }
-.more:hover { text-decoration-color: var(--navy); }
-
 /* ---------- violin ---------- */
 .violin { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 20px; align-items: start; }
 .violin h3, .card h3.sub { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin-bottom: 10px; }
@@ -365,7 +356,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .card, .feature, .pubs { padding: 18px 18px; }
   .contact { padding: 24px 18px 26px; }
   .gallery { columns: 1; }
-  .pubs li, .news li { grid-template-columns: 1fr; gap: 2px; }
+  .pubs li { grid-template-columns: 1fr; gap: 2px; }
   .timeline { padding-left: 28px; }
   .timeline > li::before { left: -26px; }
   .timeline > li.minor::before { left: -24px; }

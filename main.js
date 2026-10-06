@@ -52,20 +52,6 @@
     else img.addEventListener('error', () => placeholder(img));
   });
 
-  // News: show older items
-  const more = $('#news-more');
-  if (more) {
-    more.addEventListener('click', () => {
-      const hidden = $$('#news-list li.hidden');
-      hidden.forEach(li => li.classList.remove('hidden'));
-      if (hidden[0]) {
-        hidden[0].setAttribute('tabindex', '-1');
-        hidden[0].focus();
-      }
-      more.remove();
-    });
-  }
-
   const year = $('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
