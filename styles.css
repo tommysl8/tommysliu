@@ -49,40 +49,45 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ================= sky (nav + intro) ================= */
 /* The intro is a seascape: the sky, horizon, island and boat are part of the layout, not a picture in a box.
-   Everything is sized from --isle-w so the scene scales as one piece. */
+   On desktop the scene sits beside the text and the distant sea fades in from the right, so the first
+   screen is full even on short windows. Everything is sized from --isle-w so the scene scales as one piece. */
 .sky {
-  --isle-w: clamp(250px, 33vw, 440px);
-  --boat-w: calc(var(--isle-w) * 0.3);
+  --isle-w: clamp(260px, 36vw, 520px);
+  --boat-w: calc(var(--isle-w) * 0.27);
   --gutter: max(20px, calc((100% - var(--max)) / 2));
+  --isle-right: max(0px, calc(var(--gutter) - 60px));
   position: relative; overflow: hidden;
   background: linear-gradient(180deg, #7cc6fb 0%, #b6e1fd 58%, #e4f5ff 100%);
-  padding: 80px 0 176px;
+  padding: 80px 0 72px;
 }
 .cloud, .wind { position: absolute; z-index: 0; pointer-events: none; display: block; height: auto; }
-.cloud-a { width: 190px; top: 104px; right: calc(var(--gutter) + var(--isle-w) * 0.62); animation: drift 16s ease-in-out infinite alternate; }
-.cloud-b { width: 150px; top: 196px; right: calc(var(--gutter) - 6px); animation: drift 12s ease-in-out infinite alternate-reverse; }
-.wind-a { width: 200px; top: 160px; right: calc(var(--gutter) + var(--isle-w) * 0.2); opacity: 0.85; animation: gust 9s ease-in-out infinite; }
-.wind-b { width: 150px; top: 300px; right: calc(var(--gutter) + 10px); opacity: 0.7; animation: gust 11s ease-in-out infinite reverse; }
+.cloud-a { width: 190px; top: 100px; right: calc(var(--isle-right) + var(--isle-w) * 0.62); animation: drift 16s ease-in-out infinite alternate; }
+.cloud-b { width: 150px; top: 168px; right: calc(var(--isle-right) + 10px); animation: drift 12s ease-in-out infinite alternate-reverse; }
+.wind-a { width: 200px; top: 150px; right: calc(var(--isle-right) + var(--isle-w) * 0.3); opacity: 0.85; animation: gust 9s ease-in-out infinite; }
+.wind-b { display: none; }
 
-/* distant water: lighter than the near wave, so the page gets depth */
+/* distant water: lighter than the near wave for depth, faded out under the text */
 .far-sea {
-  position: absolute; left: 0; right: 0; bottom: 30px; height: 116px; z-index: 1;
+  position: absolute; left: 0; right: 0; bottom: 30px; height: 124px; z-index: 1;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27420%27 height=%27116%27%3E%3Cg stroke=%27%23fff%27 stroke-linecap=%27round%27 fill=%27none%27%3E%3Cpath d=%27M30 22h38M96 22h12%27 stroke-width=%272.5%27 opacity=%27.75%27/%3E%3Cpath d=%27M250 44h54M318 44h14%27 stroke-width=%272.5%27 opacity=%27.6%27/%3E%3Cpath d=%27M120 74h46%27 stroke-width=%273%27 opacity=%27.5%27/%3E%3Cpath d=%27M352 92h40%27 stroke-width=%273%27 opacity=%27.45%27/%3E%3C/g%3E%3C/svg%3E") repeat-x 0 0 / 420px 116px,
+    url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27420%27 height=%27124%27%3E%3Cg stroke=%27%23fff%27 stroke-linecap=%27round%27 fill=%27none%27%3E%3Cpath d=%27M30 24h38M96 24h12%27 stroke-width=%272.5%27 opacity=%27.75%27/%3E%3Cpath d=%27M250 48h54M318 48h14%27 stroke-width=%272.5%27 opacity=%27.6%27/%3E%3Cpath d=%27M120 80h46%27 stroke-width=%273%27 opacity=%27.5%27/%3E%3Cpath d=%27M352 100h40%27 stroke-width=%273%27 opacity=%27.45%27/%3E%3C/g%3E%3C/svg%3E") repeat-x 0 0 / 420px 124px,
     linear-gradient(180deg, #a6dbfb 0%, #87cbf6 50%, #6cbcf2 100%);
   border-top: 2px solid rgba(255, 255, 255, 0.9);
+  -webkit-mask-image: linear-gradient(90deg, transparent calc(var(--gutter) + 560px), #000 calc(var(--gutter) + 760px));
+  mask-image: linear-gradient(90deg, transparent calc(var(--gutter) + 560px), #000 calc(var(--gutter) + 760px));
 }
-.far-isle { position: absolute; z-index: 1; width: 128px; height: auto; bottom: 144px; left: calc(var(--gutter) + 360px); }
+.far-isle { display: none; position: absolute; z-index: 1; width: 128px; height: auto; }
 .isle {
   position: absolute; z-index: 2; height: auto;
-  width: var(--isle-w); right: var(--gutter);
-  bottom: calc(84px - var(--isle-w) * 0.0636);
+  width: var(--isle-w); right: var(--isle-right);
+  bottom: calc(92px - var(--isle-w) * 0.0636);
 }
+/* the boat passes in front of the island's near shore, so it never crosses the text */
 .sailboat {
   position: absolute; z-index: 2; height: auto;
   width: var(--boat-w);
-  right: calc(var(--gutter) + var(--isle-w) * 0.93);
-  bottom: calc(60px - var(--boat-w) * 0.107);
+  right: calc(var(--isle-right) + var(--isle-w) * 0.7);
+  bottom: calc(46px - var(--boat-w) * 0.107);
   transform-origin: 50% 90%;
   animation: bob 3.6s ease-in-out infinite;
 }
@@ -113,7 +118,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav.open .menu-btn span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
 
 /* ---------- intro ---------- */
-.hero { position: relative; z-index: 4; padding: 52px 0 0; }
+.hero { position: relative; z-index: 4; padding: 28px 0 0; }
 .hero-text { max-width: 620px; }
 .hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.5rem, 5.6vw, 3.8rem); line-height: 1.05; margin-bottom: 8px; text-shadow: 3px 3px 0 #fff; }
 .hero .role { font-weight: 800; font-size: 1.1rem; }
@@ -327,11 +332,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
-  .sky { --isle-w: 280px; padding-bottom: 304px; }
+  /* phones and tablets: the scene moves below the text and the sea runs full width again */
+  .sky { --isle-w: 280px; --isle-right: 0px; padding-bottom: 304px; }
+  .far-sea { height: 116px; -webkit-mask-image: none; mask-image: none; }
+  .far-isle { display: block; left: 20px; bottom: 144px; }
+  .isle { bottom: calc(84px - var(--isle-w) * 0.0636); }
+  .sailboat { --boat-w: calc(var(--isle-w) * 0.3); right: calc(var(--isle-w) * 0.93); bottom: calc(60px - var(--boat-w) * 0.107); }
   .hero { padding-top: 36px; }
   .cloud-a, .wind-a, .wind-b { display: none; }
-  .cloud-b { width: 110px; top: 84px; right: 12px; }
-  .far-isle { left: 20px; }
+  .cloud-b { width: 110px; top: 84px; right: 12px; animation: none; }
   .nav-links { display: none; }
   .menu-btn { display: flex; }
   .nav.open .nav-links {
