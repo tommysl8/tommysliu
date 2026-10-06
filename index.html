@@ -20,9 +20,22 @@
 <a class="skip" href="#about">Skip to content</a>
 
 <div class="sky">
-  <div class="cloud cloud-a" aria-hidden="true"><svg viewBox="0 0 180 70"><g fill="#fff"><ellipse cx="90" cy="48" rx="86" ry="20"/><circle cx="52" cy="38" r="24"/><circle cx="92" cy="26" r="30"/><circle cx="130" cy="38" r="22"/></g></svg></div>
-  <div class="cloud cloud-b" aria-hidden="true"><svg viewBox="0 0 120 48"><g fill="#fff"><ellipse cx="60" cy="33" rx="58" ry="14"/><circle cx="36" cy="26" r="16"/><circle cx="64" cy="18" r="20"/><circle cx="90" cy="27" r="14"/></g></svg></div>
-  <div class="cloud cloud-c" aria-hidden="true"><svg viewBox="0 0 90 36"><g fill="#fff"><ellipse cx="45" cy="25" rx="44" ry="10"/><circle cx="28" cy="20" r="12"/><circle cx="50" cy="14" r="15"/><circle cx="70" cy="21" r="10"/></g></svg></div>
+  <!-- Sky: Wind Waker spiral clouds and wind lines, kept to the right so they never sit behind the text -->
+  <svg class="cloud cloud-a" viewBox="0 0 200 76" aria-hidden="true">
+    <defs><clipPath id="cl-a"><path d="M30 66C8 66 8 42 30 42C32 22 58 14 74 28C84 8 120 6 130 28C144 18 170 24 170 44C188 44 192 66 172 66Z"/></clipPath></defs>
+    <path d="M30 66C8 66 8 42 30 42C32 22 58 14 74 28C84 8 120 6 130 28C144 18 170 24 170 44C188 44 192 66 172 66Z" fill="#fff"/>
+    <g clip-path="url(#cl-a)"><path d="M0 56C40 50 80 60 120 54S180 52 200 54V80H0Z" fill="#d3ebfb"/></g>
+    <path d="M58 50C46 50 44 36 56 34C65 33 67 43 60 45" fill="none" stroke="#bcdcf4" stroke-width="3" stroke-linecap="round"/>
+    <path d="M128 46C138 44 140 32 130 30C123 29 121 38 127 39" fill="none" stroke="#bcdcf4" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <svg class="cloud cloud-b" viewBox="0 0 200 76" aria-hidden="true">
+    <defs><clipPath id="cl-b"><path d="M24 64C6 64 6 44 24 44C28 26 52 20 66 32C78 14 110 14 118 34C134 26 158 34 156 50C172 50 174 64 160 64Z"/></clipPath></defs>
+    <path d="M24 64C6 64 6 44 24 44C28 26 52 20 66 32C78 14 110 14 118 34C134 26 158 34 156 50C172 50 174 64 160 64Z" fill="#fff"/>
+    <g clip-path="url(#cl-b)"><path d="M0 54C40 49 80 58 120 52S170 51 200 52V80H0Z" fill="#d3ebfb"/></g>
+    <path d="M92 46C82 46 80 34 90 32C98 31 100 40 94 42" fill="none" stroke="#bcdcf4" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <svg class="wind wind-a" viewBox="0 0 230 40" aria-hidden="true"><path d="M4 26C50 8 96 34 150 20C182 12 204 14 210 24C216 34 202 40 196 32C192 26 200 20 206 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg class="wind wind-b" viewBox="0 0 230 40" aria-hidden="true"><path d="M226 22C180 8 130 32 80 20C50 13 28 16 22 26C17 34 30 39 35 31C38 26 31 21 26 25" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
   <header class="nav" id="nav">
     <div class="wrap">
@@ -63,57 +76,102 @@
       </p>
       <!-- Photo: drop a file at /img/tommy.jpg and add <img class="portrait" src="/img/tommy.jpg" alt="Tommy S. Liu"> above the h1 -->
     </div>
-
-    <div class="hero-art">
-      <svg class="scene" viewBox="0 0 640 400" role="img" aria-label="A small island with a palm tree and a red sailboat on the sea">
-        <defs>
-          <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc9ff"/><stop offset="1" stop-color="#dff4ff"/></linearGradient>
-          <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5db7f3"/><stop offset="1" stop-color="#2f8fe0"/></linearGradient>
-          <clipPath id="scene-clip"><rect width="640" height="400" rx="26"/></clipPath>
-        </defs>
-        <g clip-path="url(#scene-clip)">
-          <rect width="640" height="400" fill="url(#g-sky)"/>
-          <g><circle cx="520" cy="92" r="52" fill="#fff3a6" opacity="0.7"/><circle cx="520" cy="92" r="34" fill="#ffd84d" stroke="#16325c" stroke-width="3"/></g>
-          <g class="gull g1" fill="none" stroke="#16325c" stroke-width="3.5" stroke-linecap="round"><path d="M300 128q10-12 20 0q10-12 20 0"/></g>
-          <g class="gull g2" fill="none" stroke="#16325c" stroke-width="3" stroke-linecap="round"><path d="M352 100q8-9 16 0q8-9 16 0"/></g>
-          <g fill="#fff"><ellipse cx="150" cy="92" rx="70" ry="18"/><circle cx="118" cy="82" r="20"/><circle cx="150" cy="70" r="26"/><circle cx="182" cy="82" r="18"/></g>
-          <g fill="#fff"><ellipse cx="420" cy="150" rx="46" ry="12"/><circle cx="400" cy="144" r="13"/><circle cx="422" cy="136" r="17"/><circle cx="444" cy="144" r="12"/></g>
-          <rect y="246" width="640" height="154" fill="url(#g-sea)"/>
-          <g transform="translate(160 252)">
-            <ellipse cx="0" cy="0" rx="124" ry="34" fill="#f2d59a" stroke="#16325c" stroke-width="3"/>
-            <ellipse cx="-8" cy="-14" rx="84" ry="24" fill="#7fd36b" stroke="#16325c" stroke-width="3"/>
-            <ellipse cx="-14" cy="-19" rx="58" ry="14" fill="#9ae584"/>
-            <path d="M22-20C18-58 32-92 26-124" fill="none" stroke="#8a5a3b" stroke-width="9" stroke-linecap="round"/>
-            <g fill="#3f9d3f" stroke="#16325c" stroke-width="3" stroke-linejoin="round">
-              <path d="M26-124c34-22 68-10 78 12c-34-6-60 0-78-12z"/>
-              <path d="M26-124c-34-22-68-10-78 12c34-6 60 0 78-12z"/>
-              <path d="M26-124c12-38 44-48 66-42c-28 10-50 26-66 42z"/>
-              <path d="M26-124c-12-38-44-48-66-42c28 10 50 26 66 42z"/>
-              <path d="M26-124c4-40 30-56 50-58c-22 14-38 36-50 58z"/>
-            </g>
-            <circle cx="20" cy="-114" r="6" fill="#8a5a3b" stroke="#16325c" stroke-width="2"/>
-            <circle cx="33" cy="-110" r="6" fill="#8a5a3b" stroke="#16325c" stroke-width="2"/>
-          </g>
-          <path class="wave w1" d="M-80 288Q-40 272 0 288T80 288T160 288T240 288T320 288T400 288T480 288T560 288T640 288T720 288T800 288V400H-80Z" fill="#4aa8ee"/>
-          <g transform="translate(440 300)">
-            <g class="boat">
-              <rect x="-4" y="-104" width="8" height="92" rx="4" fill="#8a5a3b" stroke="#16325c" stroke-width="3"/>
-              <path d="M6-96L66-34H6Z" fill="#fff" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
-              <path d="M6-72L40-38H6Z" fill="#ffd84d" opacity="0.95"/>
-              <path d="M-66-24H72L52 14H-46Z" fill="#e2453c" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
-              <path d="M-66-24H72L67-13H-59Z" fill="#f5a35c" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
-              <circle cx="-64" cy="-34" r="9" fill="#ffd84d" stroke="#16325c" stroke-width="3"/>
-            </g>
-          </g>
-          <path class="wave w2" d="M-80 322Q-40 306 0 322T80 322T160 322T240 322T320 322T400 322T480 322T560 322T640 322T720 322T800 322V400H-80Z" fill="#2f8fe0"/>
-          <path class="wave w3" d="M-80 358Q-40 344 0 358T80 358T160 358T240 358T320 358T400 358T480 358T560 358T640 358T720 358T800 358V400H-80Z" fill="#1f75c8"/>
-        </g>
-        <rect x="1.5" y="1.5" width="637" height="397" rx="26" fill="none" stroke="#16325c" stroke-width="3"/>
-      </svg>
-    </div>
   </section>
 
-  <svg class="divider" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34C180 70 360 4 540 34S900 70 1080 34s270-30 360 0V70H0z" fill="#4ea9ef"/></svg>
+  <!-- Seascape: distant water and horizon, a far island, the lighthouse isle, a sailboat, then the near wave -->
+  <div class="far-sea" aria-hidden="true"></div>
+  <svg class="far-isle" viewBox="0 0 160 30" aria-hidden="true"><path d="M0 30C14 22 26 10 44 8C58 6 66 14 78 12C96 8 108 0 124 4C140 8 150 22 160 30Z" fill="#9dd2f2"/></svg>
+
+  <svg class="isle" viewBox="0 0 440 330" role="img" aria-label="A small island with a red and white lighthouse, a cottage and a tree">
+    <defs>
+      <clipPath id="rock-clip"><path d="M40 302C52 262 78 236 118 226L330 220C368 228 396 258 408 302Z"/></clipPath>
+      <clipPath id="grass-clip"><path d="M96 228C104 206 150 194 220 192C290 190 336 200 350 224C340 232 330 226 322 234C312 242 300 230 290 236C278 244 264 232 252 238C238 246 224 234 210 240C196 248 182 234 168 240C152 247 140 232 126 238C112 244 102 236 96 228Z"/></clipPath>
+      <clipPath id="tower-clip"><path d="M220 204L226 96H250L256 204Z"/></clipPath>
+      <clipPath id="tree-clip"><circle cx="306" cy="158" r="20"/><circle cx="332" cy="152" r="22"/><circle cx="318" cy="134" r="20"/></clipPath>
+    </defs>
+
+    <!-- rock -->
+    <g clip-path="url(#rock-clip)">
+      <rect x="30" y="200" width="390" height="110" fill="#d8b277"/>
+      <path d="M296 214C344 224 380 252 396 306L320 306C326 272 318 240 296 214Z" fill="#b28650"/>
+      <path d="M40 306C54 268 80 244 120 232L136 238C104 252 84 274 76 306Z" fill="#ecd09a"/>
+      <path d="M118 264C170 257 232 259 296 252M146 286C200 281 254 283 312 276" fill="none" stroke="#b28650" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <path d="M40 302C52 262 78 236 118 226L330 220C368 228 396 258 408 302" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- grass cap -->
+    <g clip-path="url(#grass-clip)">
+      <rect x="90" y="186" width="270" height="70" fill="#6cbf4f"/>
+      <path d="M298 196C330 204 352 214 356 234L300 250C314 232 312 212 298 196Z" fill="#4f9d3d"/>
+      <path d="M104 226C116 206 158 196 214 196C176 204 136 212 118 232Z" fill="#92d76d"/>
+    </g>
+    <path d="M96 228C104 206 150 194 220 192C290 190 336 200 350 224C340 232 330 226 322 234C312 242 300 230 290 236C278 244 264 232 252 238C238 246 224 234 210 240C196 248 182 234 168 240C152 247 140 232 126 238C112 244 102 236 96 228Z" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- cottage -->
+    <rect x="146" y="180" width="44" height="26" fill="#f2e2c0"/>
+    <rect x="174" y="180" width="16" height="26" fill="#d6bf94"/>
+    <rect x="146" y="180" width="44" height="26" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M140 182L168 160L196 182Z" fill="#3a7fd0"/>
+    <path d="M168 160L196 182H168Z" fill="#2c64a8"/>
+    <path d="M140 182L168 160L196 182Z" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="153" y="187" width="11" height="10" rx="1.5" fill="#ffd84d" stroke="#16325c" stroke-width="2.4"/>
+    <rect x="177" y="190" width="9" height="16" fill="#16325c"/>
+
+    <!-- tree -->
+    <path d="M320 212C322 192 316 178 320 160" fill="none" stroke="#16325c" stroke-width="10" stroke-linecap="round"/>
+    <path d="M320 212C322 192 316 178 320 160" fill="none" stroke="#8a5a3b" stroke-width="5" stroke-linecap="round"/>
+    <g fill="#16325c"><circle cx="306" cy="158" r="23"/><circle cx="332" cy="152" r="25"/><circle cx="318" cy="134" r="23"/></g>
+    <g clip-path="url(#tree-clip)">
+      <rect x="280" y="108" width="80" height="80" fill="#5cb848"/>
+      <circle cx="346" cy="166" r="26" fill="#3f8f35"/>
+      <circle cx="304" cy="130" r="13" fill="#86d567"/>
+    </g>
+
+    <!-- lighthouse -->
+    <g clip-path="url(#tower-clip)">
+      <rect x="216" y="92" width="44" height="116" fill="#fbf7ee"/>
+      <rect x="216" y="128" width="44" height="22" fill="#e2453c"/>
+      <rect x="216" y="166" width="44" height="20" fill="#e2453c"/>
+      <rect x="238" y="92" width="22" height="116" fill="#16325c" opacity="0.14"/>
+    </g>
+    <path d="M220 204L226 96H250L256 204Z" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M233 204V195Q238 189 243 195V204Z" fill="#16325c"/>
+    <rect x="226" y="68" width="24" height="24" fill="#ffd84d" stroke="#16325c" stroke-width="3"/>
+    <path d="M238 68V92" stroke="#16325c" stroke-width="2.4"/>
+    <rect x="214" y="91" width="48" height="8" rx="2" fill="#e2453c" stroke="#16325c" stroke-width="2.6"/>
+    <path d="M221 70L238 50L255 70Z" fill="#e2453c" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M238 50L255 70H238Z" fill="#16325c" opacity="0.18"/>
+    <circle cx="238" cy="47" r="3.2" fill="#16325c"/>
+
+    <!-- foam where the island meets the water -->
+    <path d="M24 306C34 296 46 302 58 297C72 292 84 301 98 298C116 294 128 302 146 299C166 296 180 304 200 300C220 297 236 304 256 300C276 296 292 304 312 300C332 296 350 303 368 298C384 294 400 300 414 306C392 312 360 309 330 311C290 313 250 310 210 312C160 314 110 311 70 312C50 312 34 310 24 306Z" fill="#fff"/>
+    <path d="M24 306C16 300 18 290 28 291C35 292 35 300 29 300M414 306C424 301 424 291 414 291C407 291 407 299 413 300" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+
+  <svg class="sailboat" viewBox="0 0 150 124" aria-hidden="true">
+    <defs><clipPath id="hull-clip"><path d="M8 90H120L108 108L30 110C20 104 14 98 8 90Z"/></clipPath></defs>
+    <path d="M112 108C124 102 134 110 146 104M98 114C112 110 124 117 140 113" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M70 22V84H116C110 60 94 38 70 22Z" fill="#fff"/>
+    <path d="M70 56V84H116C114 76 111 68 106 61C94 63 82 60 70 56Z" fill="#d6e4f3"/>
+    <path d="M70 22V84H116C110 60 94 38 70 22Z" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M62 30V84H26C34 62 46 44 62 30Z" fill="#fff"/>
+    <path d="M62 62V84H26C29 76 32 69 36 63C45 65 54 64 62 62Z" fill="#d6e4f3"/>
+    <path d="M62 30V84H26C34 62 46 44 62 30Z" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="63" y="14" width="6" height="76" rx="2" fill="#8a5a3b" stroke="#16325c" stroke-width="2.4"/>
+    <path d="M69 16L88 21L69 26Z" fill="#ffd84d" stroke="#16325c" stroke-width="2.2" stroke-linejoin="round"/>
+    <g clip-path="url(#hull-clip)">
+      <rect x="0" y="86" width="130" height="30" fill="#e2453c"/>
+      <rect x="0" y="100" width="130" height="16" fill="#b93129"/>
+    </g>
+    <path d="M8 90H120L108 108L30 110C20 104 14 98 8 90Z" fill="none" stroke="#16325c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M5 86H123L120 92H9Z" fill="#f5a35c" stroke="#16325c" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M16 108C30 104 44 112 60 108C76 104 90 111 106 107" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+  </svg>
+
+  <svg class="divider" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 34C180 70 360 4 540 34S900 70 1080 34s270-30 360 0V70H0z" fill="#4ea9ef"/>
+    <path d="M0 34C180 70 360 4 540 34S900 70 1080 34s270-30 360 0" fill="none" stroke="#fff" stroke-opacity="0.7" stroke-width="3" vector-effect="non-scaling-stroke"/>
+  </svg>
 </div>
 
 <main class="sea">
